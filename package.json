@@ -1,0 +1,8 @@
+{
+  "name": "aire-e-monitor",
+  "private": true,
+  "scripts": {
+    "dev": "powershell -ExecutionPolicy Bypass -File ./start.ps1"
+  },
+  "dependencies": {}
+}
