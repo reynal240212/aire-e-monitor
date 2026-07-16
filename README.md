@@ -39,7 +39,7 @@ Crea `backend/.env`:
 
 ```env
 DATABASE_URL=postgresql://postgres:TU_PASSWORD@localhost:5432/aire_monitor
-NIC_DEFAULT=7566507
+NIC_DEFAULT=
 SCRAPER_CRON=0 8 28 * *
 PDF_DIR=./pdfs
 CALIBRATION_DIR=./pdfs/calibration

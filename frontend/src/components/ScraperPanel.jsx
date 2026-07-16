@@ -6,7 +6,7 @@ const CAPTCHA_COLORS = [
 ]
 
 export default function ScraperPanel({ onComplete }) {
-  const [nic, setNic] = useState('7566507')
+  const [nic, setNic] = useState('')
   const [color, setColor] = useState('')
   const [manualColor, setManualColor] = useState(false)
   const [running, setRunning] = useState(false)
