@@ -1,29 +1,32 @@
-import React from 'react'
-
-function CameraReader({ onScanSuccess, onCancel }) {
+export default function CameraReader({ clientId, onComplete, onBack }) {
   return (
-    <div className="glass-card glass-card-neon p-4 text-center">
-      <h4 className="fw-bold text-white mb-3">Lector de Cámara</h4>
-      <p className="text-brand-muted small mb-4">
-        Alinea el medidor en el recuadro para capturar la lectura automáticamente.
-      </p>
-
-      {/* Visor de cámara (Placeholder) */}
-      <div className="bg-black rounded border border-secondary border-opacity-25 mb-4 d-flex align-items-center justify-content-center" 
-           style={{ height: '250px', position: 'relative' }}>
-        <span className="text-brand-muted">Interfaz de Cámara Activa</span>
+    <div className="glass-card glass-card-neon" style={{ padding: 28, maxWidth: 500 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
+        <div style={{
+          width: 44, height: 44, borderRadius: 12,
+          background: 'linear-gradient(135deg, #00e5ff, #3b82f6)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          fontSize: 20, flexShrink: 0,
+        }}>⊙</div>
+        <div>
+          <h3 style={{ fontSize: 17, fontWeight: 700, margin: 0, color: '#f0f0f5' }}>Lector de Camara</h3>
+          <p style={{ fontSize: 13, color: '#606080', margin: '2px 0 0' }}>Alinea el medidor en el recuadro</p>
+        </div>
       </div>
 
-      <div className="d-flex gap-2 justify-content-center">
-        <button className="btn btn-outline-secondary text-white border-opacity-25" onClick={onCancel}>
-          Cancelar
-        </button>
-        <button className="btn" style={{ background: 'var(--brand-neon)', color: 'var(--brand-dark)', fontWeight: 'bold' }} onClick={onScanSuccess}>
-          Capturar Lectura
-        </button>
+      <div style={{
+        background: '#000', borderRadius: 12,
+        border: '2px dashed rgba(0,229,255,0.3)',
+        height: 250, display: 'flex', alignItems: 'center', justifyContent: 'center',
+        marginBottom: 20,
+      }}>
+        <span style={{ color: '#606080', fontSize: 13 }}>Interfaz de Camara Activa</span>
+      </div>
+
+      <div style={{ display: 'flex', gap: 10, justifyContent: 'center' }}>
+        <button className="btn-ghost" onClick={onBack}>Cancelar</button>
+        <button className="btn-prime" onClick={onComplete}>Capturar Lectura</button>
       </div>
     </div>
   )
 }
-
-export default CameraReader
